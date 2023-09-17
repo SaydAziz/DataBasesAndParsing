@@ -1,7 +1,7 @@
 ﻿using File_IO;
 using System.IO;
 
-Console.WriteLine("Enter folder path: ");
+Console.WriteLine("Enter folder path containing the files you want to scan: ");
 string path = Console.ReadLine();
 string[] files;
 Dictionary<string, FileProperties> fileData;
