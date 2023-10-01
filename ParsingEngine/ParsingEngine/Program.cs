@@ -1,33 +1,29 @@
-﻿//File scraper was taken from my original IO assignment
-
-using ParsingEngine;
+﻿using ParsingEngine;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-    string[] filePaths;
-    List<IParsable> toParse = new List<IParsable>();
-    string path = Environment.CurrentDirectory + @"\TextFiles";
-    if (!Directory.Exists(path))
-    {
-        Console.WriteLine("Folder does not exist.");
-    }
-    else
-    {
-        filePaths = Directory.GetFiles(path);
+// Define an array to store file paths and a list to store IParsable objects.
+string[] filePaths;
+List<IParsable> toParse = new List<IParsable>();
 
-        foreach (string filePath in filePaths)
-        {
-            toParse.Add(new TextFileObject(filePath));
-        }
+string path = Environment.CurrentDirectory + @"\TextFiles";
 
-        ParserEngine.StartParsing(toParse);
-        //Console.WriteLine("\nFiles in folder: \n");
-        //foreach (var file in toParse)
-        //{
-        //    Console.WriteLine(file.Type + " " + file.ToString());
-        //    Console.WriteLine(" ");
-        //}
+if (!Directory.Exists(path))
+{
+    Console.WriteLine("Folder does not exist.");
+}
+else
+{
+    // Get an array of file paths in the specified folder.
+    filePaths = Directory.GetFiles(path);
+
+    // Iterate through the file paths and create TextFileObject instances for parsing.
+    foreach (string filePath in filePaths)
+    {
+        toParse.Add(new TextFileObject(filePath));
     }
 
+    // Start the parsing process using the ParserEngine class.
+    ParserEngine.StartParsing(toParse);
+}
 
-    Console.ReadKey(true);
