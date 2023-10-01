@@ -22,11 +22,7 @@ else
         Console.WriteLine(file.Key);
         file.Value.ShowCharacters();
         Console.WriteLine(" ");
-
-
     }
-
-
 }
 
 
