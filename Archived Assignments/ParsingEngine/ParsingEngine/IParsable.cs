@@ -10,8 +10,6 @@ namespace ParsingEngine
     {
         CSV,
         Pipe,
-        Json,
-        XML,
         NA
     }
 
